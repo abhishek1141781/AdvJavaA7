@@ -26,7 +26,7 @@ public class BankAccountDaoImpl implements BankAccountDao {
 		cst1.setInt(2, destNo);
 		cst1.setDouble(3, amount);
 		//exec a stored proc : public boolean execute() throws SE
-		cst1.execute();	
+		cst1.execute();
 		return "Upadated src balance "+cst1.getDouble(4) + "dest bal "+cst1.getDouble(5);
 	}
 	public void cleanUp() throws SQLException

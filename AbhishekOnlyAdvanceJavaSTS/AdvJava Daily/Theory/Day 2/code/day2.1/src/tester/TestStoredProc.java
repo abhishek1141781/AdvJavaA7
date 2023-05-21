@@ -17,7 +17,5 @@ public class TestStoredProc {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
-
 }

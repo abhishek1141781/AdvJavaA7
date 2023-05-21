@@ -6,6 +6,7 @@ public class BankAccount {
 	private String customerName;
 	private String acType;
 	private double balance;
+	
 	public BankAccount() {
 		// TODO Auto-generated constructor stub
 	}

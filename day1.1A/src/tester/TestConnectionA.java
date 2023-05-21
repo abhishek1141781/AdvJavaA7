@@ -11,10 +11,12 @@ public class TestConnectionA {
 		
 		String url="jdbc:mysql://localhost:3306/advjava";
 		try {
-			Connection cnTest = DButilsA.openCustomConnection();
+			Connection cn = DButilsA.openCustomConnection();
+			System.out.println("Got a new connection to the advjava DB");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
+		
+		System.out.println("Main over");
 	}
 }
