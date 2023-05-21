@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;utils.DButils&apos; to &apos;DButilsA&apos;&#x0D;&#x0A;- Original project: &apos;day1.1A&apos;&#x0D;&#x0A;- Original element: &apos;utils.DButils&apos;&#x0D;&#x0A;- Renamed element: &apos;utils.DButilsA&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;DButils&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;utils{DButils.java[DButils" matchStrategy="1" name="DButilsA" qualified="false" references="true" similarDeclarations="false" stamp="1684667654276" textual="false" version="1.0"/>
+</session>

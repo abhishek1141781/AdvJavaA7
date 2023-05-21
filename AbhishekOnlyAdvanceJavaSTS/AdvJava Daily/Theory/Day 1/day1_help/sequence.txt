@@ -1,0 +1,106 @@
+Please go through web basics. : MANDATORY
+
+Let's Revise Multi threading in brief
+
+Today's topics
+1. Daemon vs non daemon Threads
+2. Enter JDBC
+
+
+
+
+Enter Java DB connectivity (JDBC)
+refer : jdbc help
+
+
+Today's Topics
+JDBC Steps
+Enter web prog in Java
+
+
+
+
+What is JDBC ? : An API to connect to DB , query DB , perform DDL /DML operations
+package : java.sql
+
+
+Which are the packages ? 
+1. java.sql ---class --DriverManager.getConnection(url,userName,pwd) ---actually fetches the DB connection n rets to the caller. (FIXED connectivity)
+
+Later : 
+2. javax.sql --DataSource.getConnection() -- represents pooled out DB connection.
+
+Why JDBC ? :JDBC applications are :  Platform independent + DB vendor independent(partially: meaning if sql syntax changes from DB to DB , you have to make changes in the code)
+
+Other than SQL --JDBC Driver has to be replaced in DB specific manner
+
+What are DB specific config params -- 4
+1. JDBC Driver class
+eg : Class.forName("com.mysql.cj.jdbc.Driver") ---OPTIONAL in current JDBC 4.x version
+2. DB URL
+eg : MySQL --- createDatabaseIfNotExist=true
+Oracle -- jdbc:oracle:thin:@localhost:1520:xe
+3 user name
+4 pwd
+
+Currently we are hard coding these details in : DBUtils , later to be added in config xml files.
+
+
+
+How JDBC offers partial DB independence ? : 
+1. JDBC Driver : connector (translator --2 way : java <---> DB )
+2. JDBC  API : java.sql ---consists of largely i/fs : eg : Connection,ST,PST,RST,CST... : specs
+Imple classes : JDBC JAR : provided by DB vendors or 3rd party vendors
+eg : MySQL : mysql connector . jar
+
+What is JDBC Driver ?  : connector
+Types : (refer to slides)
+Type IV JDBC Driver : pure java driver using vendor specific native protocol
+side effect : changes will have to be made in DB URL , when you change the DB
+
+
+Generalized steps in JDBC 
+1. Add JDBC jar in run time cls path
+1.5 Load n register JDBC Driver : OPTIONAL
+2. get fixed db conn. (DriverManager.getConnection(url,userName,pwd))
+3. create Statement or PreparedStatement or CallableStatement
+Any relationship between these i/fs ?
+Statement <---- PreparedStatement <---- CallableStatement : i/f
+4. Execution methods
+execQuery , execUpdate,execute
+5. close all db resources.
+
+
+Objectives 
+1.Display all user details (Retrieve)
+sql : static (select * from users)
+
+2. Display complete name , reg date , reg amount for all users reged between 2 dates (Retrieve with IN params)
+sql : select first_name,last_name,reg_date,reg_amt from users where reg_date between ? and ?
+
+
+
+Enter Layered DB application , to solve above objectives 
+Then complete CRUD with layered architecture
+
+Tester(main class) ---DAL / DAO (i/f <----class) --DBUtils: to get fixed DB conn ---POJO/s(Model / Entity / Domain / DTO)---DB  (EIS layer)
+ORM : object to relational mapping : JDBC
+Table ---POJO/Model/Entity/DTO class
+Columns -- Properties (non static n non transient data members)
+rows --POJO
+
+JDBC based DAO impl class
+1. public n pkged class
+2. import pkg : java.sql
+3. state : Connection , sts/psts/csts
+4. def ctor ---will be invoked exactly once by the layer abover(eg : Tester)
+one time jobs (init time jobs) 
+get the cn from DBUtils
+creats psts n csts n keep them rdy
+5. CRUD  method
+will be invoked by tester --multiple times (once per request) : service
+6. Clean Up style method 
+will be invoked once by the layer abover(eg : Tester) --exactly once @ app destroy time (ie closing app)
+
+Objective
+1. Display complete name , reg date , reg amount for all users under a specific role , reged between 2 dates (Retrieve with IN params)

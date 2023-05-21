@@ -1,0 +1,278 @@
+MySql server up n running ?
+Tomcat server added to workspace ?
+JDK 11, STS 3.9.18,Tomcat 9.x
+
+Created dyn web app with HTML ?
+Tested servlet deployed with annotation ?
+
+
+
+Today's Topics
+Servlet API 
+Servlet deployment with xml tags
+Servlet JDBC Integration
+Page Navigation Overview
+Session Management overview
+
+
+Revision
+
+What is Java EE/Jakarta EE ? 
+specs of prim services.
+
+eg : servlet, JSP , security,web services , JPA......
+
+Why J2EE 1.8/Java EE 8 /Jakarata EE 8
+
+server inde.
+supports diff type of clnts
+rdy made imple of std. services.
+
+Who provides Specs of prim services in J2EE  / Java EE  : Oracle/Sun / Eclipse Foundation
+Implementation : Java EE server vendor
+
+Popular vendors & their products 
+(Apache : Tomcat / Tomee, Oracle --Glassfish , Jboss , weblogic....)
+
+Request response flow(Layers)
+Request URL --- http://www.abc.com:9090/day3
+
+URL : Uniform resource locator
+/day3 : URI
+
+Revise request response flow
+Host : identified by DNS/IP layer
+Web server : process listening on port : 9090 -- TCP
+Web server -- chks URI -- context(=web appln) root --dyn web app --delegates req processing --WC
+
+What is WC ?
+
+Server side JVM
+Manages web apps. 
+Provides run time env for server side dynamic web comps(servlets, JSP,filter)
+
+1. Server side JVM residing within web server.
+Its run-time environment for dynamic web components(Servlet & JSP,Filter) . 
+Jobs ---
+1. Creating Http Request & Http response objects 
+2. Controlling life-cycle of dyn web comps (manages life cycle of servlet,JSP,Filters)
+3. Giving ready-made support for services --- Naming,security,Conn pooling .
+4. Handling concurrent request from multiple clients .
+5. Managing session tracking...
+
+
+2. What is web.xml? --- Deployment descriptor one per web appln
+popualated by -- prog (with help IDE)
+who reads it -- WC
+when ---once at the web app deployment time
+what does it consist of --- XML tags based instructions meant for WC
+
+Mandatory till Java EE 1.5 , optional later.
+
+
+J2EE compliant folder structure of dynamic web application
+1. WEB-INF : private 
+web.xml
+<classes> : .class
+<lib> : .jar
+
+2. root folder : src/main/webapp -- html , js, css , jsp
+
+3. src/main/java : java src files
+
+
+3. Why servlets : Adds dyn nature to the web app
+
+Job list
+1. req processing
+2. resp gen.
+3. B.L
+4. Managing DAO layer
+5. Page navigation
+
+
+What is a servlet ?
+Java class --no main(...) method , dyn web comp --whose life cycle will be managed by WC
+
+--init , service, destroy
+
+
+
+Servlet API details --refer to diag servlet-api.png  IMPORTANT
+<Tomcat_Home>\lib --- servlet-api.jar => specs
+imple left to vendors --catalina.jar => implementation of servlet specs
+
+API
+javax.servlet.Servlet i/f ---- contains 5 methods
+
+3 important methods are : 
+public void init(ServletConfig config) throws ServletExc
+public void service(ServletRequest rq,ServletResp rs) throws ServletExc,IOExc
+public void destroy()
+
+imple class : javax.servlet.GenericServlet
+abstract method : service
+concrete : init , destroy
+
+sub class --  javax.servlet.http.HttpServlet
+abstract method : NONE
+concrete : service
+
+When clnt sends 1st req to the servlet
+--loads class --> singleton instance : def ctor 
+--> init()
+
+public void service(ServletRequest rq ,ServletResponse rs) throws ServletExc, IOExc
+--> protected void service(HttpServletRequest rq ,HttpServletResponse rs) throws ServletExc, IOExc
+--> Dispatches further to --->
+get --> doGet
+post -->  doPost ...
+
+Steps of creating the servlet
+@WebServlet(value="/testMe")
+public class MyServlet extends HttpServlet
+{
+   @Override
+   public void doGet(HttpServletRequest rq ,HttpServletResponse rs) throws ServletExc, IOExc
+{
+   rs.setContentType("text/html");
+   try(PW pw=rs.getWriter())
+   {
+     pw.print(.....);
+   } //pw.close -->pw.flush--> committing the resp 
+   
+}
+}
+
+Deployment of the servlet 
+1. Annotation
+OR
+2. XML Tags
+eg :
+How to deploy a servlet w/o annotations --- via XML tags
+web.xml
+
+<servlet>
+ <servlet-name>abc12345</servlet-name>
+<servlet-class>com.example.MyServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+ <servlet-name>abc12345</servlet-name>
+ <url-pattern>/testMe</url-pattern>
+</servlet-mapping>
+
+How does WC store the mapping info of the servlet ???
+At the time of web app deployment ---WC tries to populate map of url patterns , from XML tags (from web.xml).if not present ---it  will check for @WebServlet annotation
+
+In the map created @ web app dep time
+key : /testMe
+value : com.example.MyServlet
+
+
+
+URL request after Client clicks on the link : "Test Servlet"
+http://localhost:8080/day3.1/testMe
+
+WC -- chks for the key(/testMe)  ---found --1st request ---WC starts life cycle
+Key (URL pattern) not found --- HTTP 404
+
+class loading ---singleton instance ---init => init seq 
+
+init --success ---contnues to servicing of the clnt req
+
+fail --WC aborts life cycle
+
+
+At the end : 
+public void destroy() : inherited from GenericServlet --> servlet instance is marked for GC
+Triggers : server shut down / reload (re deploy) /un deploy
+
+
+
+What is default loading policy of WC for servlets ? Lazy
+Meaning : WC waits for 1st request , coming from the clnt , to start servlet life cycle. 
+
+Can you change it to eager ? YES
+
+HOW ? loadOnStartup
+Use case : If the servlet's init() method : time consuming(heavy weight!)
+
+
+
+
+How to read request params sent from the clnt in the servlet ?
+
+javax.servlet.ServletRequest i/f methods
+1. public String getParameter(String paramName)
+
+2. public String[] getParameterValues(String paramName)
+
+
+Start with the case study (online voting)
+
+Objective  : Servlet --JDBC Integration
+0. JDBC JAR : <WEB-INF>/lib OR <tomcat> / lib
+Layers involved : Servlet --DAO (Uses DBUtils) --POJO -- DB
+
+Reference case study : Online Voting
+Design 
+1. Table : users2
+2. POJO : User
+3. Edit DBUtils : 
+3.1 open fixed DB connection : void (opens the fixed con to DB)
+3.2 close connection
+3.3 get connection (gets created connection)
+
+4. DAO : UserDao n implementation class
+
+6. welcome page : login.html(post) --> LoginServlet
+
+7. --> LoginServlet
+7.1 --init , destroy, doGet/doPost
+
+
+Centralized exc handling in Servlets
+How ?
+@Override
+public void init() throws ServletException
+{
+try {
+  open connection
+  create dao inst
+} catch(Exception e)
+{
+//re throw the exception back to WC , so that WC doesn't continue to service.
+  throw new ServletException("err in init" +getClass(),e);
+}
+}
+
+
+API of javax.servlet.ServletException
+Constructor :
+public ServletException(String message,Throwable rootCause)
+
+-----------------------Pending -----------------------------
+Objective : 
+Complete login--logout flow in current app
+(login.html -- LoginServlet --successful login --check the role 
+If admin --redirect  to admin servlet
+If voter , who has not yet voted -- redirect  to candidate list page
+If voter , who has already  voted -- redirect  to candidate list page
+
+
+Refer : "day2-data\day2_help\page navigation\page navigation techniques.txt"
+
+Do you see any problems after redirect ?
+
+Problem cause 
+HTTP is stateles inherently , can not remember the client across multiple requests.
+
+n it's solution
+
+Session Tracking
+-----------------------------------------------------------------------------------------
+Extra Reading :
+For Complete list of HTTP response status codes :
+refer : https://www.restapitutorial.com/httpstatuscodes.html
+
+

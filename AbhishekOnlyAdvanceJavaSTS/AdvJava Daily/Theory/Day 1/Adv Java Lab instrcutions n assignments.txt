@@ -1,0 +1,27 @@
+Day 1
+1. Confirm that MySql  DB is working fine , using cmd prompt OR mysql workbench
+
+2. Refer , to installation instructions , shared on 1st day of core Java.
+2.1 JDK version : JDK 11
+2.2 IDE : Eclipse STS 3.9.18
+2.3 Create NEW workspace , for advanced java.
+2.4 AS per the instructions : in "day1_data\day1_help\web server help\Updated steps in tomcat.txt", add Apache Tomcat web server.
+2.5 Confirm if it's starting properly , without any exceptions
+
+
+3. import day1.1 , in your new workspace.(Edit build path)
+Revise JDBC 
+TestStatement 
+TestPreparedStatement
+
+4. import day1.2 , in your new workspace.(Edit build path)
+Revise Layered application.
+
+5. You will have advjava db created in mysql 
+Solve, using DB layered approach(Tester, DAO , DBUtils ,POJO,DB)
+5.1 User login
+i/p : email n password
+O/P : login successful with user details or invalid message.
+
+5.2 Display all users under specified role , sorted as per reg amount.
+i/p role

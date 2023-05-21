@@ -1,0 +1,49 @@
+17-Jul-2020 19:15:43.131 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.36
+17-Jul-2020 19:15:43.132 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jun 3 2020 17:07:09 UTC
+17-Jul-2020 19:15:43.133 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.36.0
+17-Jul-2020 19:15:43.133 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+17-Jul-2020 19:15:43.133 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+17-Jul-2020 19:15:43.134 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+17-Jul-2020 19:15:43.134 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_251\jre
+17-Jul-2020 19:15:43.134 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_251-b08
+17-Jul-2020 19:15:43.134 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+17-Jul-2020 19:15:43.134 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\recent work\softwares\apache-tomcat-9.0.36
+17-Jul-2020 19:15:43.134 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\recent work\softwares\apache-tomcat-9.0.36
+17-Jul-2020 19:15:43.135 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=D:\recent work\softwares\apache-tomcat-9.0.36\conf\logging.properties
+17-Jul-2020 19:15:43.135 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+17-Jul-2020 19:15:43.135 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+17-Jul-2020 19:15:43.135 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+17-Jul-2020 19:15:43.135 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+17-Jul-2020 19:15:43.136 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=D:\recent work\softwares\apache-tomcat-9.0.36
+17-Jul-2020 19:15:43.136 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=D:\recent work\softwares\apache-tomcat-9.0.36
+17-Jul-2020 19:15:43.136 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=D:\recent work\softwares\apache-tomcat-9.0.36\temp
+17-Jul-2020 19:15:43.137 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.24] using APR version [1.7.0].
+17-Jul-2020 19:15:43.138 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+17-Jul-2020 19:15:43.139 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+17-Jul-2020 19:15:43.142 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+17-Jul-2020 19:15:43.361 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+17-Jul-2020 19:15:43.579 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [564] milliseconds
+17-Jul-2020 19:15:43.609 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+17-Jul-2020 19:15:43.609 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.36]
+17-Jul-2020 19:15:43.620 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\recent work\softwares\apache-tomcat-9.0.36\webapps\docs]
+17-Jul-2020 19:15:44.168 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+17-Jul-2020 19:15:44.196 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\recent work\softwares\apache-tomcat-9.0.36\webapps\docs] has finished in [577] ms
+17-Jul-2020 19:15:44.196 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\recent work\softwares\apache-tomcat-9.0.36\webapps\examples]
+17-Jul-2020 19:15:44.652 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+17-Jul-2020 19:15:44.678 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\recent work\softwares\apache-tomcat-9.0.36\webapps\examples] has finished in [482] ms
+17-Jul-2020 19:15:44.678 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\recent work\softwares\apache-tomcat-9.0.36\webapps\host-manager]
+17-Jul-2020 19:15:44.895 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+17-Jul-2020 19:15:44.899 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\recent work\softwares\apache-tomcat-9.0.36\webapps\host-manager] has finished in [221] ms
+17-Jul-2020 19:15:44.900 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\recent work\softwares\apache-tomcat-9.0.36\webapps\manager]
+17-Jul-2020 19:15:45.115 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+17-Jul-2020 19:15:45.118 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\recent work\softwares\apache-tomcat-9.0.36\webapps\manager] has finished in [218] ms
+17-Jul-2020 19:15:45.118 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\recent work\softwares\apache-tomcat-9.0.36\webapps\ROOT]
+17-Jul-2020 19:15:45.313 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+17-Jul-2020 19:15:45.316 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\recent work\softwares\apache-tomcat-9.0.36\webapps\ROOT] has finished in [198] ms
+17-Jul-2020 19:15:45.319 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+17-Jul-2020 19:15:45.326 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1,745] milliseconds
+17-Jul-2020 19:16:09.527 INFO [http-nio-8080-exec-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [D:\recent work\softwares\apache-tomcat-9.0.36\webapps\day21.3-0.0.1-SNAPSHOT.war]
+17-Jul-2020 19:16:10.805 INFO [http-nio-8080-exec-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+17-Jul-2020 19:16:12.704 INFO [http-nio-8080-exec-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [D:\recent work\softwares\apache-tomcat-9.0.36\webapps\day21.3-0.0.1-SNAPSHOT.war] has finished in [3,177] ms
+17-Jul-2020 19:16:52.153 INFO [http-nio-8080-exec-8] org.apache.catalina.util.LifecycleBase.stop The stop() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/day21.3-0.0.1-SNAPSHOT]] after stop() had already been called. The second call will be ignored.
+17-Jul-2020 19:16:52.683 INFO [http-nio-8080-exec-8] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/day21.3-0.0.1-SNAPSHOT]
