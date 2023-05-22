@@ -13,7 +13,7 @@ public class DButilsA {
 //		store the url where the database is stored in a string
 		String url = "jdbc:mysql://localhost:3306/advjava";
 //		call
-		cn = DriverManager.getConnection(url, "root", "mansys");
+		cn = DriverManager.getConnection(url, "root", "root");
 		System.out.println("db connection opened at port 3306");
 		return cn;
 	}

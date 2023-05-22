@@ -1,0 +1,36 @@
+What will happen @ web app dep time
+1. WC creates ServletContext object(representing entire web appln)
+2. Checks from web.xml / annotations for any servlets to be loaded at strt up ?
+If yes : starts init sequence of the servlet
+2.1 class loading 
+2.2 servlet instance def ctor
+2.3 servlet config obj --populated with init params (if any)
+2.4 invokes init method
+
+Request resp flow
+1.Clnt sends a req
+http://host:port/day5.2
+Resp : login form
+
+2. after form submission
+http://host:port/day5.2/authenticate
+Resp : in case of voter successful auth
+temp redirec resp ---SC302, location=candidate_list, set-cookie: JSESSIONID=fshfh56537567 , body : empty
+
+3. web browser auto sends a next req :
+http://host:port/day5.2/candidate_list , method=GET
+Resp : hello name , dyn generated form , cast a vote 
+
+4. If voter selects a candidate , id=5
+http://host:port/day5.2/logout?candidate_id=5
+
+
+
+
+
+
+
+
+
+
+

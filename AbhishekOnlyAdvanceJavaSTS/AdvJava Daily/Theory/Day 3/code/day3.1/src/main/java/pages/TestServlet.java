@@ -20,8 +20,6 @@ public class TestServlet extends HttpServlet {
 	public void init() throws ServletException {
 		System.out.println("in init1");
 	}
-
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
@@ -41,5 +39,4 @@ public class TestServlet extends HttpServlet {
 	public void destroy()  {
 		System.out.println("in destroy1");
 	}
-
 }

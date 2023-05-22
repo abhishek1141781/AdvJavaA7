@@ -1,0 +1,39 @@
+Regarding javax.servlet.ServletContext (i/f)
+
+1. Defined in  javax.servlet package.
+2. Who creates its instance  -- WC
+3. When -- @ Web application (=context) deployment time
+NOTE : The ServletContext object is contained within the ServletConfig object, which the WC provides the servlet when the servlet is initialized.
+
+4. How many instances ? --one per web application
+
+5. Usages
+5.1 Server side logging
+API public void log(String mesg)
+5.2 To create context(=application) scoped attributes
+API public void setAttribute(String nm,Object val)
+NOTE : Access them always in thread safe manner (using synchronized blocks)
+
+5.3 To access global(scope=entire web application) parameters
+How to add context scoped parameters ?
+
+In web.xml
+<context-param>
+  <param-name>name</param-name>
+      <param-value>value</param-value>
+</context-param>
+How to access these params in a Servlet ?
+(can be accessed from init method onwards)
+
+1. Get ServletContext  
+API of GenericServlet
+ServletContext getServletContext() --method inherited from GenericServlet
+
+2. ServletContext API
+String getInitparameter(String paramName) : rets the param value.
+eg : ctx param name : user_name value : abc
+In the Servlet : getServletContext().getInitparameter("user_name") ---abc
+
+5.4 Creating request dispatcher
+H.W
+

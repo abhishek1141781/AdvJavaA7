@@ -72,5 +72,4 @@ public class LoginServlet extends HttpServlet {
 			throw new ServletException("err in do-post" + getClass(), e);
 		}
 	}
-
 }

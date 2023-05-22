@@ -22,6 +22,4 @@ public class AdminServlet extends HttpServlet {
 			pw.print("<h4> in Admin Servlet </h4>");
 		}
 	}
-	
-
 }

@@ -3,7 +3,6 @@ package pages;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/hello")
+
+// This line declares the class HelloWorldServlet and extends the HttpServlet class, which provides the basic functionality for handling HTTP requests.
 public class HelloWorldServlet extends HttpServlet{
 	//override init , destroy , doGet
 
@@ -35,6 +36,4 @@ public class HelloWorldServlet extends HttpServlet{
 	public void init() throws ServletException {
 		System.out.println("in init "+Thread.currentThread());//nm , prio , grp
 	}
-
-	
 }

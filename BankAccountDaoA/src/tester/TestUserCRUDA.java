@@ -14,7 +14,7 @@ public class TestUserCRUDA {
 			UserDaoImplA userDao = new UserDaoImplA();
 			boolean exit=false;
 			while(!exit) {
-				System.out.println("1. Display selected users 2. Sign Up 3. UN subscribe User 0.Exit");
+				System.out.println("1. Display selected users\n 2. Sign Up\n 3. UN subscribe User\n 4.Update user details\n 0.Exit\n");
 				System.out.println("Choose option");
 				try {
 					switch (sc.nextInt()) {
@@ -27,7 +27,6 @@ public class TestUserCRUDA {
 //						System.out.println("Reg status: "+userDao.registerNewUser(new UserA(sc.next(),sc.next(),sc.next(),sc.next(),sc.nextDouble(),Date.valueOf(sc.next()),sc.next())));
 						System.out.println("Reg status : "+userDao.registerNewUser(new UserA(sc.next(), sc.next(), sc.next(), sc.next(),
 								sc.nextDouble(), Date.valueOf(sc.next()), sc.next())));
-						
 					case 3:
 						System.out.println("Enter userid to unsubscribe");
 						System.out.println("Status "+userDao.deleteNewUser(sc.nextInt()));
@@ -37,7 +36,6 @@ public class TestUserCRUDA {
 						exit=true;
 						userDao.cleanUp();
 						break;
-						
 					default:
 						break;
 					}
@@ -45,7 +43,6 @@ public class TestUserCRUDA {
 					e.printStackTrace();
 				}
 			}
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

@@ -19,7 +19,5 @@ public class TestConnection {
 			e.printStackTrace();
 		}
 		System.out.println("main over...");
-
 	}
-
 }
