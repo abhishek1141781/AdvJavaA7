@@ -1,0 +1,7 @@
+Excellent links for understanding DB transactions , handling concurrent transactions(problems associated) n optimistic vs pessimistic locking
+
+1. https://vladmihalcea.com/a-beginners-guide-to-acid-and-database-transactions/
+
+2. https://vladmihalcea.com/a-beginners-guide-to-database-locking-and-the-lost-update-phenomena/
+
+3. https://vladmihalcea.com/optimistic-vs-pessimistic-locking/

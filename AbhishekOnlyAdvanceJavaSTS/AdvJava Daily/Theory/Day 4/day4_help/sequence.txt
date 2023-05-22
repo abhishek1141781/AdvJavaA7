@@ -1,0 +1,34 @@
+Revise 
+Creating n deploying servlet , along with Servlet API
+
+How to do a smart (time effective) revision in the lab ??? : @EOD
+
+Today's Topics
+Continue with online voting 
+Page Navigation
+Redirect scenario internals
+eg : response.sendRedirect("admin_main");
+WC : generates a resp
+resp sts : SC 302 => redirect
+Header/s : Location : admin_main
+Body : EMPTY  (content len=0)
+
+Resp --> clnt browser
+clnt Browser : SC 302
+Generates NEXT request
+URL : http://host:port/day4.1/admin_main
+Method : GET
+Header : no special headers.
+
+WC ---> url -pattern : /admin_main
+--starts the life cycle --AdminServlet --....
+doGet --sends resp.
+
+
+
+
+Session Tracking
+Cookie based  : refer to day4.1 eclipse project
+HttpSession i/f based : refer to day4.2 eclipse project
+Dynamic form generation : refer to day4.3 eclipse project
+

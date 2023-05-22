@@ -1,0 +1,2 @@
+If required : do refer to this primer for  TCP/IP in web programming
+https://www.techtarget.com/searchnetworking/definition/TCP-IP#:~:text=TCP%2FIP%20stands%20for%20Transmission,(an%20intranet%20or%20extranet).

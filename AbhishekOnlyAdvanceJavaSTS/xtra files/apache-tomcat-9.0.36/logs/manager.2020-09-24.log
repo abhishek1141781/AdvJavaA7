@@ -1,0 +1,7 @@
+24-Sep-2020 13:41:19.264 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log HTMLManager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+24-Sep-2020 13:41:19.264 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log HTMLManager: init: Global resources are available
+24-Sep-2020 13:41:19.271 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log HTMLManager: list: Listing contexts for virtual host 'localhost'
+24-Sep-2020 13:41:25.215 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log HTMLManager: stop: Stopping web application '/test_war'
+24-Sep-2020 13:41:25.233 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log HTMLManager: list: Listing contexts for virtual host 'localhost'
+24-Sep-2020 13:41:28.836 INFO [http-nio-8080-exec-9] org.apache.catalina.core.ApplicationContext.log HTMLManager: undeploy: Undeploying web application at '/test_war'
+24-Sep-2020 13:41:29.453 INFO [http-nio-8080-exec-9] org.apache.catalina.core.ApplicationContext.log HTMLManager: list: Listing contexts for virtual host 'localhost'
